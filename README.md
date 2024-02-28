@@ -15,6 +15,24 @@ Editing app.json to support web applications
 }
 ```
 
+Creating vercel.json
+```json
+{
+  "buildCommand": "expo export -p web",
+  "outputDirectory": "dist",
+  "devCommand": "expo",
+  "cleanUrls": true,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/"
+    }
+  ]
+}
+
+```
+
 Installing some required dependencies
 ```
 npx expo install react-dom react-native-web @expo/webpack-config expo-router
